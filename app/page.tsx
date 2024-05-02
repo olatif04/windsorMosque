@@ -75,7 +75,8 @@ export default async function Home() {
             <PrayerTimes today={today} tomorrow={tomorrow} />
           </div>
           <div className="p-4 md:p-6">
-          <SlidingBanner slides={slides}/>
+          <SlidingBanner slides={slides} today={today} />
+
           </div>
         </div>
         <ServiceWorker />

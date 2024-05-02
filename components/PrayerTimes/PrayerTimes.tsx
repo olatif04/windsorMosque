@@ -51,7 +51,7 @@ export default function PrayerTimes({
   }, [today])
 
   return (
-    <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 mb-2"> {/* reduced bottom margin */}
+<div className="bg-mosqueGreen-dark text-white p-4 lg:p-4 mb-0"> {/* Reduced bottom padding and removed bottom margin */}
   <table className="mx-auto table-auto border-collapse border-none w-full">
    <thead>
           <tr

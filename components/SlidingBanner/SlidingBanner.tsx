@@ -1,42 +1,18 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import moment from "moment"
-import { getNextPrayer } from "@/services/PrayerTimeService"
 
-export default function SlidingBanner({ slides, today }: { slides: any[], today: any }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [timeToNextIqama, setTimeToNextIqama] = useState<number | null>(null);
+const transitionTime = parseInt(process.env.SLIDE_TRANSITION_TIME ?? "7") // defaults to 7 seconds
 
+export default function SlidingBanner({ slides }: { slides: any }) {
+  const [currentSlide, setCurrentSlide] = useState(0)
   useEffect(() => {
-    const checkIqamaTime = () => {
-      const nextPrayer = getNextPrayer(today);
-      const nextPrayerTime = moment(today.prayerTimes[nextPrayer.prayerIndex], "HH:mm");
-      const currentTime = moment();
-      const secondsToIqama = nextPrayerTime.diff(currentTime, 'seconds');
-
-      if (secondsToIqama <= 120) {
-        setTimeToNextIqama(secondsToIqama);
-      } else {
-        setTimeToNextIqama(null);
-      }
-    };
-
     const interval = setInterval(() => {
-      checkIqamaTime();
-      if (timeToNextIqama === null) {
-        setCurrentSlide((currentSlide + 1) % slides.length);
-      }
-    }, 1000);
+      setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1)
+    }, transitionTime * 1000)
 
-    checkIqamaTime(); // Also run immediately to set initial state
+    return () => clearInterval(interval)
+  }, [currentSlide, slides])
 
-    return () => clearInterval(interval);
-  }, [today, currentSlide, slides.length, timeToNextIqama]);
-
-  if (timeToNextIqama !== null) {
-    return <div>Countdown to next Iqama: {timeToNextIqama} seconds</div>;
-  }
-
-  return <>{slides[currentSlide]}</>;
+  return <>{slides[currentSlide]}</>
 }

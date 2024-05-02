@@ -18,6 +18,7 @@ export default function MosqueMetadata({
           height={24} // Specify height
           layout='responsive' // This will maintain the aspect ratio
         />
+        
       </div>
       <div className="self-center ml-4">
         <h2 className="font-bold text-4xl md:text-4xl">    {metadata.name}</h2>

@@ -14,10 +14,14 @@ export default function PrayerTimes({
       label: "Fajr",
       data: today.fajr,
     },
-    // {
-    //   label: "Sunrise",
-    //   data: today.sunrise_start,
-    // },
+    {
+      label: "Sunrise",
+      data: {
+        start: today.sunrise_start,
+        congregation_start: null,
+        start_secondary: null,  // No congregation time for sunrise
+      },
+    },
     {
       label: "Zuhr",
       data: today.zuhr,

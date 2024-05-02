@@ -1,16 +1,14 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import { getNextPrayer } from "@/services/PrayerTimeService"
-import { DailyPrayerTime } from "@/types/DailyPrayerTimeType"
-import moment from "moment"
+import { useEffect, useState } from "react";
+import { getNextPrayer } from "@/services/PrayerTimeService";
+import { DailyPrayerTime } from "@/types/DailyPrayerTimeType";
+import moment from "moment";
 
 export default function PrayerTimes({
   today,
   tomorrow,
 }: {
-  today: DailyPrayerTime
-  tomorrow: DailyPrayerTime
+  today: DailyPrayerTime;
+  tomorrow: DailyPrayerTime;
 }) {
   const PrayerTimesArray = [
     {
@@ -38,61 +36,48 @@ export default function PrayerTimes({
       data: today.isha,
       tomorrow: tomorrow.isha,
     },
-  ]
+  ];
 
-  const [nextPrayerTime, setNextPrayerTime] = useState(getNextPrayer(today))
+  const [nextPrayerTime, setNextPrayerTime] = useState(getNextPrayer(today));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setNextPrayerTime(getNextPrayer(today))
-    }, 60 * 1000)
+      setNextPrayerTime(getNextPrayer(today));
+    }, 60 * 1000);
 
-    return () => clearInterval(interval)
-  }, [today])
+    return () => clearInterval(interval);
+  }, [today]);
 
   return (
     <table className="text-white mx-auto table-auto border-collapse border-none w-full">
       <thead>
-        <tr
-          className="text-center [&>*]:p-2 md:[&>*]:p-8
-          md:[&>*]:border [&>*]:border-mosqueGreen-dark
-          [&>th]:border-t-0 [&>th:last-of-type]:border-r-0"
-        >
+        <tr className="text-center border border-mosqueGreen-dark">
           <th className="sr-only">Prayer time</th>
-          <th className="md:text-5xl">Begins</th>
-          <th className="md:text-5xl">Jama&apos;ah</th>
-          <th className="md:text-5xl">Tomorrow</th>
+          <th className="text-3xl md:text-4xl">Begins</th> {/* Adjusted font size */}
+          <th className="text-3xl md:text-4xl">Jama&apos;ah</th> {/* Adjusted font size */}
+          <th className="text-3xl md:text-4xl">Tomorrow</th> {/* Adjusted font size */}
         </tr>
       </thead>
       <tbody>
         {PrayerTimesArray.map((prayer, index) => (
           <tr
             key={prayer.label}
-            className="
-              text-center
-              [&>*]:p-4
-              md:[&>*]:p-8
-              md:[&>*]:border md:[&>*]:border-b-0 [&>*]:border-mosqueGreen-dark
-              md:[&>th]:w-20
-              [&>th]:border-l-0
-              [&>td:last-of-type]:border-r-0
-              border border-mosqueGreen-dark border-l-0 border-r-0
-              last-of-type:border-b-0"
+            className="text-center border border-mosqueGreen-dark"
           >
-            <th className="text-left text-xl md:text-5xl md:text-right">
+            <th className="text-left text-xl md:text-2xl md:text-right">
               {prayer.label}
             </th>
-            <td className="text-xl md:text-6xl">
+            <td className="text-xl md:text-2xl"> {/* Adjusted font size */}
               {moment(prayer.data.start, ["HH:mm"]).format("h:mm")}
-              {prayer.data?.start_secondary ? (
+              {prayer.data?.start_secondary && (
                 <div className="block mt-1 md:mt-2">
                   {moment(prayer.data.start_secondary, ["HH:mm"]).format(
-                    "h:mm",
+                    "h:mm"
                   )}
                 </div>
-              ) : null}
+              )}
             </td>
-            <td className={`font-bold text-xl md:text-6xl`}>
+            <td className="font-bold text-xl md:text-2xl"> {/* Adjusted font size */}
               <span
                 className={
                   nextPrayerTime.today === true &&
@@ -102,11 +87,11 @@ export default function PrayerTimes({
                 }
               >
                 {moment(prayer.data.congregation_start, ["HH:mm"]).format(
-                  "h:mm",
+                  "h:mm"
                 )}
               </span>
             </td>
-            <td className={`text-xl md:text-6xl`}>
+            <td className="text-xl md:text-2xl"> {/* Adjusted font size */}
               <span
                 className={
                   nextPrayerTime.today === false &&
@@ -116,7 +101,7 @@ export default function PrayerTimes({
                 }
               >
                 {moment(prayer.tomorrow.congregation_start, ["HH:mm"]).format(
-                  "h:mm",
+                  "h:mm"
                 )}
               </span>
             </td>
@@ -124,5 +109,5 @@ export default function PrayerTimes({
         ))}
       </tbody>
     </table>
-  )
+  );
 }

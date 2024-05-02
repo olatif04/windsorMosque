@@ -51,17 +51,17 @@ export default function PrayerTimes({
   }, [today])
 
   return (
-    <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6">
-      <table className="mx-auto table-auto border-collapse border-none w-full">
-        <thead>
+    <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 mb-2"> {/* reduced bottom margin */}
+  <table className="mx-auto table-auto border-collapse border-none w-full">
+   <thead>
           <tr
             className="text-center [&>*]:p-2 md:[&>*]:p-8
             md:[&>*]:border [&>*]:border-mosqueGreen-dark
             [&>th]:border-t-0 [&>th:last-of-type]:border-r-0"
           >
             <th className="sr-only">Prayer time</th>
-            <th className="md:text-5xl text-3xl">Adhan</th>
-            <th className="md:text-5xl text-3xl">Iqama</th>
+            <th className="md:text-6xl text-3xl">Adhan</th>
+            <th className="md:text-6xl text-3xl">Iqama</th>
           </tr>
         </thead>
         <tbody>

@@ -7,9 +7,9 @@ export default function Date() {
 
   return (
     <div className="flex items-center justify-center text-white text-center md:text-left">
-      <p className="font-bold text-4xl md:text-5xl">{englishDate}</p>
+      <p className="font-bold text-3xl md:text-5xl">{englishDate}</p>
       <span className="mx-3 text-5xl md:text-5xl font-bold">|</span> {/* Bold vertical separator */}
-      <p className="font-bold text-4xl md:text-5xl">{hijriDate}</p>
+      <p className="font-bold text-3xl md:text-5xl">{hijriDate}</p>
     </div>
   )
 }

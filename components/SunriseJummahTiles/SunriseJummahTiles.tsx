@@ -7,9 +7,9 @@ export default function JummahTiles({
   jummahTimes: JummahTimes
 }) {
   return (
-    <div className="bg-mosqueGreen-dark text-white">
-      <dl className="grid grid-cols-3 justify-items-stretch text-center gap-0 md:gap-3 p-4 lg:p-6">
-        {jummahTimes.map((jummahTime, index) => (
+    <div className="bg-mosqueGreen-dark text-white mt-2 p-4 lg:p-6"> {/* reduced top margin */}
+    <dl className="grid grid-cols-3 justify-items-stretch text-center gap-0 md:gap-3">
+       {jummahTimes.map((jummahTime, index) => (
           <div key={index}>
             <dt className="text-sm lg:text-2xl font-medium">
               {jummahTime.label}

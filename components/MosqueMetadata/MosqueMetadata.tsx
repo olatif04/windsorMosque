@@ -10,15 +10,16 @@ export default function MosqueMetadata({
       <div className="flex-shrink-0 self-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="m-2 max-w-full lg:max-w-lg max-h-16 mx-auto"
+          className="m-2 max-w-full lg:max-w-lg max-h-12 mx-auto"
           src={metadata.logo_url}
-          alt={metadata.name}  // Added alt text for accessibility
+          alt={metadata.name}  // Added proper alt text for accessibility
         />
       </div>
-      <div className="self-center ml-4">  // Added margin-left for spacing
+      <div className="self-center ml-4">  // Added margin for spacing
         <h2 className="font-bold text-2xl md:text-3xl">
           {metadata.name}
         </h2>
+        {/* Address and website are hidden */}
         <p className="hidden text-xl mx-5 md:mx-0">{metadata.address}</p>
         <p className="hidden text-xl">{metadata.website}</p>
       </div>

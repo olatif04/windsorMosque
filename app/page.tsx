@@ -57,7 +57,7 @@ export default async function Home() {
     <>
       <main className="md:p-5">
         <div className="md:grid md:grid-cols-8">
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 flex flex-col justify-center items-center"> {/* Added flex properties */}
             <div className="p-4 md:p-6">
               <Clock />
             </div>
@@ -72,7 +72,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="p-4 md:p-6 md:col-span-5">
-            <PrayerTimes today={today} tomorrow={tomorrow} />
+            <PrayerTimes today={today} />
           </div>
         </div>
         <div className="p-4 md:p-6">

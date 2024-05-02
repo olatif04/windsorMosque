@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import { getNextPrayer } from "@/services/PrayerTimeService";
 import { DailyPrayerTime } from "@/types/DailyPrayerTimeType";

@@ -77,7 +77,7 @@ export default function PrayerTimes({
               border border-mosqueGreen-dark border-l-0 border-r-0
               last-of-type:border-b-0"
           >
-            <th className="text-right text-5xl md:text-7xl md:text-right">
+            <th className="text-left text-5xl md:text-7xl md:text-right">
               {prayer.label}
             </th>
             <td className="text-6xl md:text-7xl">

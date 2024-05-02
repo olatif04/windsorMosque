@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import { getNextPrayer } from "@/services/PrayerTimeService"
 import { DailyPrayerTime } from "@/types/DailyPrayerTimeType"
@@ -7,36 +6,29 @@ import moment from "moment"
 
 export default function PrayerTimes({
   today,
-  tomorrow,
 }: {
   today: DailyPrayerTime
-  tomorrow: DailyPrayerTime
 }) {
   const PrayerTimesArray = [
     {
       label: "Fajr",
       data: today.fajr,
-      tomorrow: tomorrow.fajr,
     },
     {
       label: "Zuhr",
       data: today.zuhr,
-      tomorrow: tomorrow.zuhr,
     },
     {
       label: "Asr",
       data: today.asr,
-      tomorrow: tomorrow.asr,
     },
     {
       label: "Maghrib",
       data: today.maghrib,
-      tomorrow: tomorrow.maghrib,
     },
     {
       label: "Isha",
       data: today.isha,
-      tomorrow: tomorrow.isha,
     },
   ]
 
@@ -61,7 +53,6 @@ export default function PrayerTimes({
           <th className="sr-only">Prayer time</th>
           <th className="md:text-5xl">Begins</th>
           <th className="md:text-5xl">Jama&apos;ah</th>
-          <th className="md:text-5xl">Tomorrow</th>
         </tr>
       </thead>
       <tbody>
@@ -79,7 +70,7 @@ export default function PrayerTimes({
               border border-mosqueGreen-dark border-l-0 border-r-0
               last-of-type:border-b-0"
           >
-            <th className="text-left text-xl md:text-6xl md:text-right">
+            <th className="text-left text-xl md:text-7xl md:text-right">
               {prayer.label}
             </th>
             <td className="text-xl md:text-8xl">
@@ -102,20 +93,6 @@ export default function PrayerTimes({
                 }
               >
                 {moment(prayer.data.congregation_start, ["HH:mm"]).format(
-                  "h:mm",
-                )}
-              </span>
-            </td>
-            <td className={`text-xl md:text-8xl`}>
-              <span
-                className={
-                  nextPrayerTime.today === false &&
-                  nextPrayerTime.prayerIndex === index
-                    ? "underline decoration-mosqueGreen-highlight underline-offset-8"
-                    : ""
-                }
-              >
-                {moment(prayer.tomorrow.congregation_start, ["HH:mm"]).format(
                   "h:mm",
                 )}
               </span>

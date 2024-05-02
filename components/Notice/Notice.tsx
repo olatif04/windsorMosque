@@ -23,6 +23,14 @@ export default function Notice() {
         <p className="italic text-xl md:text-2xl md:max-w-lg hidden md:block">
           Please ensure your mobile phone is silent in the prayer hall.
         </p>
+        <hr>
+        </hr>
+        <p className="italic text-m md:text-xl md:max-w-lg hidden md:block">
+        Allah's Messenger (ﷺ) said, "A Muslim is a brother of another Muslim, so he should not oppress him, nor should he hand him over to an oppressor. Whoever fulfilled the needs of his brother, Allah will fulfill his needs.
+        </p>
+        <p className="italic text-s md:text-xl md:max-w-lg hidden md:block">
+        Sahih al-Bukhari 2442
+        </p>
       </div>
     </div>
   )

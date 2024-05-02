@@ -8,7 +8,7 @@ export default function Notice() {
           over to an oppressor. Whoever fulfilled the needs of his brother,
           Allah will fulfill his needs.&quot;
         </p>
-        <p className="italic text-xl md:text-2xl md:max-w-lg hidden md:block">
+        <p className="text-xl md:text-2xl md:max-w-lg hidden md:block">
           Sahih al-Bukhari 2442
         </p>
       </div>

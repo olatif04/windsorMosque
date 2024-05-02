@@ -16,7 +16,7 @@ export default function Clock({ darkMode = false }: { darkMode?: boolean }) {
   }, [format]);
 
   return (
-    <div className={`p-7 text-center md:text-left md:w-fit ${!darkMode ? "bg-white" : ""}`}>
+    <div className={`p-7 text-center md:text-center md:w-fit ${!darkMode ? "bg-white" : ""}`}>
       <time className={`text-5xl md:text-8xl font-bold ${!darkMode ? "text-mosqueGreen" : "text-gray-500"}`}>
         {time}
       </time>

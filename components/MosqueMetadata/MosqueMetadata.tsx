@@ -8,18 +8,17 @@ export default function MosqueMetadata({
   metadata: MosqueMetadataType
 }) {
   return (
-    <div className="flex text-white text-center md:text-left mt-0"> {/* Reduced top margin */}
-      <div className="flex-shrink-0 self-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+    <div className="flex items-center text-white text-center md:text-left mt-0"> {/* Use items-center to align items vertically */}
+      <div className="flex-shrink-0">
         <Image
           src={logo}
           alt={metadata.name} // Proper alt text for accessibility
-          width={24} // Specify width
-          height={24} // Specify height
+          width={100} // Adjusted for visual balance
+          height={100} // Adjusted for visual balance
           layout='responsive' // This will maintain the aspect ratio
         />
       </div>
-      <div className="self-center ml-4">
+      <div className="ml-4" style={{ marginTop: '0.5em' }}>  // Subtle adjustment to lower the text
         <h2 className="font-bold text-4xl md:text-4xl">{metadata.name}</h2> {/* Increased font size */}
         {/* Address and website are hidden; they are included for potential future use but not displayed */}
         <p className="hidden text-xl mx-5 md:mx-0">{metadata.address}</p>

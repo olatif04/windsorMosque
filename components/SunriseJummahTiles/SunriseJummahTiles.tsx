@@ -9,7 +9,7 @@ export default function JummahTiles({
   return (
     <div>
       <dl
-        className="grid grid-cols-1 lg:grid-cols-3 justify-items-stretch text-center gap-0 md:gap-3"
+        className="grid grid-cols-3 justify-items-stretch text-center gap-0 md:gap-3"
       >
         {jummahTimes.map((jummahTime, index) => (
           <div

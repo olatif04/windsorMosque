@@ -24,7 +24,7 @@ export default function JummahTiles({
       </dl>
       {/* Integrated notice section */}
       <div className="flex items-center justify-center">
-        <p className="text-3xl lg:text-2xl">
+        <p className="text-3xl lg:text-2xl mt-1">
           Isha Iqama will change to 9:45PM tomorrow. Fajr Iqama will also change
           to 6:00AM.
         </p>

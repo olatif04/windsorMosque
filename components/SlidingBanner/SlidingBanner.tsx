@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 
-interface SlidingBannerProps {
-  slides: JSX.Element[];
-}
-
 const transitionTime = parseInt(process.env.SLIDE_TRANSITION_TIME ?? "7"); // defaults to 7 seconds
 
-export default function SlidingBanner({ slides }: SlidingBannerProps) {
+export default function SlidingBanner({ slides }: { slides: any }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,9 +13,9 @@ export default function SlidingBanner({ slides }: SlidingBannerProps) {
   }, [currentSlide, slides]);
 
   return (
-    <div className="relative w-full">
+    <div>
       {slides[currentSlide]}
-      <div className="absolute bottom-0 w-full text-center text-sm font-light p-1">
+      <div style={{ textAlign: 'center', marginTop: '10px', fontSize: 'small' }}>
         Developed by Omer Latif
       </div>
     </div>

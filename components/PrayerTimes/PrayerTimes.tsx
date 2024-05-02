@@ -22,7 +22,7 @@ export default function PrayerTimes({
       },
     },
     {
-      label: "Zuhr",
+      label: "Dhuhr",
       data: today.zuhr,
     },
     {

@@ -18,7 +18,7 @@ export default function PrayerTimes({
       label: "Sunrise",
       data: {
         start: today.sunrise_start,
-        congregation_start: null,
+        congregation_start: "",
         start_secondary: null,  // No congregation time for sunrise
       },
     },

@@ -27,7 +27,7 @@ export default function SlidingBanner({ slides, today }: SlidingBannerProps) {
             const currentTime = moment();
             const secondsToIqama = nextPrayerTime.diff(currentTime, 'seconds');
 
-            if (secondsToIqama <= 7200) {  // Show countdown when 2 hours to Iqama
+            if (secondsToIqama <= 120) {  // Show countdown when 2 hours to Iqama
                 setCountdown(`Iqama in ${secondsToIqama} seconds`);
                 setDisplayCountdown(true);
             } else {

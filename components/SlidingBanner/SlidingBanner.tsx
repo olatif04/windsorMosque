@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { getNextPrayer } from '@/services/PrayerTimeService';  // Ensure this path is correct
+import { getNextPrayer } from '@/services/PrayerTimeService';
 
 interface SlidingBannerProps {
-    slides: React.ReactNode[];  // Assuming slides are React nodes
-    today: any;                 // Specify a more detailed type if available
+    slides: React.ReactNode[];
+    today: any;
 }
 
 export default function SlidingBanner({ slides, today }: SlidingBannerProps) {
@@ -18,7 +18,6 @@ export default function SlidingBanner({ slides, today }: SlidingBannerProps) {
         const updateInterval = () => {
             const { today: isToday, prayerIndex } = getNextPrayer(today);
             if (!isToday) {
-                // If the next prayer time is not today, we continue showing slides
                 setDisplayCountdown(false);
                 return;
             }
@@ -27,11 +26,10 @@ export default function SlidingBanner({ slides, today }: SlidingBannerProps) {
             const currentTime = moment();
             const secondsToIqama = nextPrayerTime.diff(currentTime, 'seconds');
 
-            if (secondsToIqama <= 120) {  // Show countdown when 2 hours to Iqama
+            if (secondsToIqama <= 7200) {
                 setCountdown(`Iqama in ${secondsToIqama} seconds`);
                 setDisplayCountdown(true);
             } else {
-                // Continue cycling slides normally
                 setDisplayCountdown(false);
                 setCurrentSlide(prev => (prev + 1) % slides.length);
             }
@@ -42,7 +40,7 @@ export default function SlidingBanner({ slides, today }: SlidingBannerProps) {
     }, [today, slides.length]);
 
     return (
-        <div style={{ width: '100%', height: '100%' }}>
+        <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {displayCountdown ? 
                 <div style={{ textAlign: 'center', padding: '20px' }}>{countdown}</div> :
                 <div style={{ width: '100%', height: '100%' }}>{slides[currentSlide]}</div>

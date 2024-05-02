@@ -10,13 +10,13 @@ export default function MosqueMetadata({
       <div className="flex-shrink-0 self-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="m-2 max-w-full lg:max-w-lg max-h-20 mx-auto transform scale-125" // Increased size with transform
+          className="m-2 max-w-full lg:max-w-lg max-h-24 mx-auto transform scale-125" // Increased size with transform
           src={metadata.logo_url}
           alt={metadata.name} // Proper alt text for accessibility
         />
       </div>
       <div className="self-center ml-4">
-        <h2 className="font-bold text-3xl md:text-4xl">{metadata.name}</h2> {/* Increased font size */}
+        <h2 className="font-bold text-4xl md:text-4xl">  {metadata.name}</h2> {/* Increased font size */}
         {/* Address and website are hidden */}
         <p className="hidden text-xl mx-5 md:mx-0">{metadata.address}</p>
         <p className="hidden text-xl">{metadata.website}</p>

@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useState } from "react";
 import { getNextPrayer } from "@/services/PrayerTimeService";
 import { DailyPrayerTime } from "@/types/DailyPrayerTimeType";
@@ -55,9 +54,9 @@ export default function PrayerTimes({
       <thead>
         <tr className="text-center border border-mosqueGreen-dark">
           <th className="sr-only">Prayer time</th>
-          <th className="text-3xl md:text-4xl">Begins</th> {/* Adjusted font size */}
-          <th className="text-3xl md:text-4xl">Jama&apos;ah</th> {/* Adjusted font size */}
-          <th className="text-3xl md:text-4xl">Tomorrow</th> {/* Adjusted font size */}
+          <th className="md:text-5xl">Adhan</th>
+          <th className="md:text-5xl">Iqama</th>
+          <th className="md:text-5xl">Tomorrow</th>
         </tr>
       </thead>
       <tbody>
@@ -79,7 +78,7 @@ export default function PrayerTimes({
                 </div>
               )}
             </td>
-            <td className="font-bold text-xl md:text-2xl"> {/* Adjusted font size */}
+            <td className={`font-bold text-xl md:text-2xl`}> {/* Adjusted font size */}
               <span
                 className={
                   nextPrayerTime.today === true &&
@@ -93,7 +92,7 @@ export default function PrayerTimes({
                 )}
               </span>
             </td>
-            <td className="text-xl md:text-2xl"> {/* Adjusted font size */}
+            <td className={`text-xl md:text-2xl`}> {/* Adjusted font size */}
               <span
                 className={
                   nextPrayerTime.today === false &&

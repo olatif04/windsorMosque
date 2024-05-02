@@ -19,7 +19,7 @@ export default function PrayerTimes({
       data: {
         start: today.sunrise_start,
         congregation_start: "",
-        start_secondary: null,  // No congregation time for sunrise
+        start_secondary: "",  // No congregation time for sunrise
       },
     },
     {
@@ -78,10 +78,10 @@ export default function PrayerTimes({
               border border-mosqueGreen-dark border-l-0 border-r-0
               last-of-type:border-b-0"
           >
-            <th className="text-left text-2xl md:text-7xl md:text-right">
+            <th className="text-right text-4xl md:text-7xl md:text-right">
               {prayer.label}
             </th>
-            <td className="text-3xl md:text-8xl">
+            <td className="text-5xl md:text-7xl">
               {moment(prayer.data.start, ["HH:mm"]).format("h:mm")}
               {prayer.data?.start_secondary ? (
                 <div className="block mt-1 md:mt-2">
@@ -91,7 +91,7 @@ export default function PrayerTimes({
                 </div>
               ) : null}
             </td>
-            <td className={`font-bold text-3xl md:text-8xl`}>
+            <td className={`font-bold text-5xl md:text-7xl`}>
               <span
                 className={
                   nextPrayerTime.today === true &&

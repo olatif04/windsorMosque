@@ -42,7 +42,7 @@ export default async function Home() {
 
   let slides = [
     <SunriseJummahTiles
-      sunrise={today.sunrise_start}
+      // sunrise={today.sunrise_start}
       jummahTimes={jummahTimes}
       key={"sunrise_jummah_times"}
     />,

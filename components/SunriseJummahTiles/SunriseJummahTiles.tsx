@@ -19,7 +19,7 @@ export default function JummahTiles({
             <dt className="text-sm lg:text-2xl font-medium">
               {jummahTime.label}
             </dt>
-            <dd className="mt-1 text-xl lg:text-5xl font-bold tracking-tight">
+            <dd className="mt-1 text-3xl lg:text-5xl font-bold tracking-tight">
               {moment(jummahTime.time, ["HH:mm"]).format("h:mm")}
             </dd>
           </div>
@@ -27,8 +27,8 @@ export default function JummahTiles({
       </dl>
       {/* Placeholder text section below the Jummah times */}
       <div className="text-white p-4 lg:p-6 bg-mosqueGreen-dark mt-4">
-        <p className="text-xl lg:text-2xl">
-          Your placeholder text here. Maybe something inspirational or a call to action?
+        <p className="text-3xl lg:text-2xl">
+          Isha Iqama will change to 9:45PM tomorrow.
         </p>
       </div>
     </div>

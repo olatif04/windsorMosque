@@ -1,6 +1,6 @@
 export default function Notice() {
   return (
-    <div className="flex text-white text-center md:text-left">
+    <div className="flex text-white text-center md:text-center">
       <div>
         <p className="italic text-xl md:text-2xl md:max-w-lg hidden md:block">
           Allah&apos;s Messenger (ﷺ) said, &quot;A Muslim is a brother of

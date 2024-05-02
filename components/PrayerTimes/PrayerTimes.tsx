@@ -82,7 +82,7 @@ export default function PrayerTimes({
             <th className="text-left text-xl md:text-6xl md:text-right">
               {prayer.label}
             </th>
-            <td className="text-xl md:text-7xl">
+            <td className="text-xl md:text-8xl">
               {moment(prayer.data.start, ["HH:mm"]).format("h:mm")}
               {prayer.data?.start_secondary ? (
                 <div className="block mt-1 md:mt-2">
@@ -92,7 +92,7 @@ export default function PrayerTimes({
                 </div>
               ) : null}
             </td>
-            <td className={`font-bold text-xl md:text-7xl`}>
+            <td className={`font-bold text-xl md:text-8xl`}>
               <span
                 className={
                   nextPrayerTime.today === true &&
@@ -106,7 +106,7 @@ export default function PrayerTimes({
                 )}
               </span>
             </td>
-            <td className={`text-xl md:text-7xl`}>
+            <td className={`text-xl md:text-8xl`}>
               <span
                 className={
                   nextPrayerTime.today === false &&

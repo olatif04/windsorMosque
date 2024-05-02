@@ -18,8 +18,7 @@ export default function PrayerTimes({
       label: "Sunrise",
       data: {
         start: today.sunrise_start,
-        congregation_start: "",
-        start_secondary: "",  // No congregation time for sunrise
+        congregation_start: "",  // Explicitly no congregation time for sunrise
       },
     },
     {
@@ -92,18 +91,20 @@ export default function PrayerTimes({
               ) : null}
             </td>
             <td className={`font-bold text-5xl md:text-7xl`}>
-              <span
-                className={
-                  nextPrayerTime.today === true &&
-                  nextPrayerTime.prayerIndex === index
-                    ? "underline decoration-mosqueGreen-highlight underline-offset-8"
-                    : ""
-                }
-              >
-                {moment(prayer.data.congregation_start, ["HH:mm"]).format(
-                  "h:mm",
-                )}
-              </span>
+              {prayer.data.congregation_start ? (
+                <span
+                  className={
+                    nextPrayerTime.today === true &&
+                    nextPrayerTime.prayerIndex === index
+                      ? "underline decoration-mosqueGreen-highlight underline-offset-8"
+                      : ""
+                  }
+                >
+                  {moment(prayer.data.congregation_start, ["HH:mm"]).format(
+                    "h:mm",
+                  )}
+                </span>
+              ) : null}
             </td>
           </tr>
         ))}

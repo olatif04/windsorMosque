@@ -58,8 +58,8 @@ export default function PrayerTimes({
           [&>th]:border-t-0 [&>th:last-of-type]:border-r-0"
         >
           <th className="sr-only">Prayer time</th>
-          <th className="md:text-5xl">Begins</th>
-          <th className="md:text-5xl">Jama&apos;ah</th>
+          <th className="md:text-5xl text-3xl">Adhan</th>
+          <th className="md:text-5xl text-3xl">Iqama</th>
         </tr>
       </thead>
       <tbody>
@@ -77,10 +77,10 @@ export default function PrayerTimes({
               border border-mosqueGreen-dark border-l-0 border-r-0
               last-of-type:border-b-0"
           >
-            <th className="text-right text-4xl md:text-7xl md:text-right">
+            <th className="text-right text-5xl md:text-7xl md:text-right">
               {prayer.label}
             </th>
-            <td className="text-5xl md:text-7xl">
+            <td className="text-6xl md:text-7xl">
               {moment(prayer.data.start, ["HH:mm"]).format("h:mm")}
               {prayer.data?.start_secondary ? (
                 <div className="block mt-1 md:mt-2">
@@ -90,7 +90,7 @@ export default function PrayerTimes({
                 </div>
               ) : null}
             </td>
-            <td className={`font-bold text-5xl md:text-7xl`}>
+            <td className={`font-bold text-6xl md:text-7xl`}>
               {prayer.data.congregation_start ? (
                 <span
                   className={

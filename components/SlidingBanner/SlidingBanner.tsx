@@ -15,9 +15,11 @@ export default function SlidingBanner({ slides }: { slides: any }) {
   }, [currentSlide, slides]);
 
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
-      {slides[currentSlide]}
-      <div style={{ position: 'absolute', bottom: '0', width: '100%', textAlign: 'center', fontSize: 'small', color: 'gray' }}>
+    <div>
+      <div style={{ width: '100%' }}>
+        {slides[currentSlide]}
+      </div>
+      <div style={{ textAlign: 'center', fontSize: 'small', color: 'white', marginTop: '10px' }}>
         Developed by Omer Latif
       </div>
     </div>

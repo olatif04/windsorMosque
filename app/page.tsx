@@ -28,8 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const mosqueMetadata: MosqueMetadataType = await getMetaData()
 
   return {
-    title: `${mosqueMetadata.name} Prayer Times | MosqueScreen Project by MosqueOS`,
-    description: `${mosqueMetadata.address} | ${mosqueMetadata.name} | MosqueScreen Project by MosqueOS`,
+    title: `${mosqueMetadata.name} Prayer Times`,
+    description: `${mosqueMetadata.address} | ${mosqueMetadata.name}`,
   }
 }
 
